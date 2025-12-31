@@ -140,6 +140,30 @@ const testimonialSectionCollection = defineCollection({
   }),
 });
 
+// Apps collection schema
+const appsCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/apps" }),
+  schema: z.object({
+    ...commonFields,
+    author: z.string().optional(),
+    categories: z.array(z.string()).default(["others"]),
+    tags: z.array(z.string()).default(["others"]),
+    draft: z.boolean().optional(),
+  }),
+});
+
+// Games collection schema
+const gamesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/games" }),
+  schema: z.object({
+    ...commonFields,
+    author: z.string().optional(),
+    categories: z.array(z.string()).default(["others"]),
+    tags: z.array(z.string()).default(["others"]),
+    draft: z.boolean().optional(),
+  }),
+});
+
 // Export collections
 export const collections = {
   // Pages
@@ -149,6 +173,8 @@ export const collections = {
   pages: pagesCollection,
   about: aboutCollection,
   contact: contactCollection,
+  apps: appsCollection,
+  games: gamesCollection,
 
   // sections
   ctaSection: ctaSectionCollection,

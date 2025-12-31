@@ -1,0 +1,28 @@
+---
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+
+const title = "Imprint";
+const meta_title = "Imprint - Dancing Macaw";
+const description = "Legal Information";
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <PageHeader title={title} />
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>
+          Dancing Macaw<br />
+          Musterstraße 1<br />
+          12345 Musterstadt
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>E-Mail: contact@dancingmacaw.com</p>
+      </div>
+    </div>
+  </section>
+</Base>

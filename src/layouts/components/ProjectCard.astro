@@ -1,0 +1,45 @@
+---
+import { humanize, plainify, slugify } from "@/lib/utils/textConverter";
+import ImageMod from "./ImageMod.astro";
+
+const { data, folder } = Astro.props;
+const { title, image, description, tags } = data.data;
+---
+
+<div class="bg-body dark:bg-darkmode-body p-6 rounded-lg shadow-md text-center">
+  {
+    image && (
+      <div class="flex justify-center mb-4">
+        <ImageMod
+          class="rounded-lg"
+          src={image}
+          alt={title}
+          width={100}
+          height={100}
+          format="webp"
+        />
+      </div>
+    )
+  }
+  <h4 class="mb-2">
+    <a href={`/${folder}/${data.id}`}>
+      {title}
+    </a>
+  </h4>
+  <p class="mb-4 text-sm text-text dark:text-darkmode-text">
+    {description}
+  </p>
+  <div class="mb-4">
+    {
+      tags &&
+        tags.map((tag: string) => (
+          <span class="inline-block bg-theme-light dark:bg-darkmode-theme-light rounded px-2 py-1 text-xs mr-2 mb-2">
+            {humanize(tag)}
+          </span>
+        ))
+    }
+  </div>
+  <a class="btn btn-primary btn-sm" href={`/${folder}/${data.id}`}>
+    View Details
+  </a>
+</div>

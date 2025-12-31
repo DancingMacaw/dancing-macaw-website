@@ -1,0 +1,49 @@
+---
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+
+const title = "Rule of Three Privacy Policy";
+const meta_title = "Rule of Three Privacy Policy - Dancing Macaw";
+const description = "Privacy Policy for Rule of Three Game";
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <PageHeader title={title} />
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <h2>Privacy Policy for Rule of Three</h2>
+        <p>
+          This privacy policy governs your use of the software application Rule
+          of Three (“Application”) for mobile devices that was created by
+          Dancing Macaw.
+        </p>
+        <h3>
+          What information does the Application obtain and how is it used?
+        </h3>
+        <p>
+          The Application uses third party services that may collect information
+          used to identify you.
+        </p>
+        <p>
+          Link to privacy policy of third party service providers used by the
+          app:
+        </p>
+        <ul>
+          <li>
+            <a href="https://policies.google.com/privacy"
+              >Google Play Services</a>
+          </li>
+          <li>
+            <a href="https://support.google.com/admob/answer/6128543?hl=en"
+              >AdMob</a>
+          </li>
+          <li>
+            <a href="https://unity3d.com/legal/privacy-policy"
+              >Unity Analytics</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

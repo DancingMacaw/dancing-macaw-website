@@ -1,0 +1,52 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { render } from "astro:content";
+import ImageMod from "@/components/ImageMod.astro";
+
+export async function getStaticPaths() {
+  const posts = await getSinglePage("apps");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, description, image } = post.data;
+---
+
+<Base title={title} meta_title={title} description={description} image={image}>
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          {
+            image && (
+              <div class="mb-10 text-center">
+                <ImageMod
+                  src={image}
+                  height={500}
+                  width={1200}
+                  alt={title}
+                  class="w-full rounded"
+                  format="webp"
+                />
+              </div>
+            )
+          }
+          <h1 class="h2 mb-4 text-center">{title}</h1>
+          <div class="content mb-10">
+            <Content />
+          </div>
+          <div class="text-center">
+            <a href="mailto:support@dancingmacaw.com" class="btn btn-primary"
+              >Contact Support</a
+            >
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>

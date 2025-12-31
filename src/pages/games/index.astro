@@ -1,0 +1,32 @@
+---
+import ProjectCard from "@/components/ProjectCard.astro";
+import Base from "@/layouts/Base.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+
+const FOLDER = "games";
+const indexData = await getListPage(FOLDER, "-index");
+const items = await getSinglePage(FOLDER);
+---
+
+<Base
+  title={indexData.data.title}
+  meta_title={indexData.data.meta_title}
+  image={indexData.data.image}
+  description={indexData.data.description}
+>
+  <PageHeader title={indexData.data.title} />
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {
+          items.map((item) => (
+            <div class="mb-8 md:col-6 lg:col-4">
+              <ProjectCard data={item} folder={FOLDER} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>
