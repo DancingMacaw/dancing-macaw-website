@@ -37,4 +37,8 @@ export default defineConfig({
     shikiConfig: { theme: "one-dark-pro", wrap: true },
     extendDefaultPlugins: true,
   },
+  i18n: {
+    locales: ["de", "en", "es"],
+    defaultLocale: "en",
+  },
 });

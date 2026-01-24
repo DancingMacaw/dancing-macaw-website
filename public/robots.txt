@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Disallow: /api/*
+Disallow: /impressum
+Disallow: /dataprivacy/*

@@ -49,10 +49,12 @@ const { theme_switcher }: { theme_switcher: boolean } = config.settings;
             style={{
               height: logo_height.replace("px", "") + "px",
               width: logo_width.replace("px", "") + "px",
+              marginRight: "15px",
             }}
             format="webp"
           />
         )}
+        {logo_text ? logo_text : title}
       </>
     ) : logo_text ? (
       logo_text

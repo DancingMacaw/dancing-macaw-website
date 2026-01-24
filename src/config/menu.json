@@ -3,24 +3,12 @@
     {
       "name": "Apps & Tools",
       "url": "/apps"
-    },
-    {
-      "name": "Games",
-      "url": "/games"
-    },
-    {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Contact",
-      "url": "/contact"
     }
   ],
   "footer": [
     {
-      "name": "Imprint",
-      "url": "/imprint"
+      "name": "Legal Text / Impressum",
+      "url": "/impressum"
     },
     {
       "name": "Privacy Policy",
