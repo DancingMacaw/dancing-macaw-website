@@ -31,6 +31,11 @@ Continuous progress leads to big achievements. With the help of our app you will
 Get **Rule of Three** now for free and boost your productivity!
 The app is available for both iOS and Android. 
 
+<div class="flex gap-4 my-6 justify-center flex-wrap">
+  <a href="#" class="btn btn-outline-primary">Download on App Store</a>
+  <a href="#" class="btn btn-outline-primary">Get it on Google Play</a>
+</div> 
+
 ## Features
 
 - Set three goals for a specific time period
@@ -45,4 +50,7 @@ The app is available for both iOS and Android.
 ![Screenshot 1](/images/screenshot-rule-of-three-focus-app-cropped.jpg)
 
 
-[Play Store](#) | [App Store](#)
+<div class="flex gap-4 my-6 justify-center flex-wrap">
+  <a href="#" class="btn btn-primary">Download on App Store</a>
+  <a href="#" class="btn btn-outline-primary">Get it on Google Play</a>
+</div>
