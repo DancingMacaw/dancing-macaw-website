@@ -2,7 +2,7 @@
 # Banner
 banner:
   title: "We build digital tools and games"
-  content: "Home of Rule of Three, LinkNest and more."
+  content: "Home of Rule of Three."
   image: "/images/banner.png"
   button:
     enable: true
@@ -11,21 +11,13 @@ banner:
 
 # Features (Featured Projects)
 features:
-  - title: "LinkNest"
-    image: "/images/service-1.png"
-    content: "Your bookmarks, re-organized. LinkNest helps you manage your digital life with ease."
-    bulletpoints: []
-    button:
-      enable: true
-      label: "View Details"
-      link: "/apps/linknest"
 
   - title: "Rule of Three"
-    image: "/images/service-2.png"
-    content: "A puzzle game that challenges your mind. Simple rules, endless fun."
+    image: "/images/screenshot-rule-of-three-focus-app-cropped.jpg"
+    content: "Rule of Three is a simple but effective todo app. Set your goals and focus. Focus on a day, week, month, quarter, or year level."
     bulletpoints: []
     button:
       enable: true
-      label: "Play Now"
-      link: "/games/rule-of-three"
+      label: "Learn More  "
+      link: "/apps/rule-of-three"
 ---

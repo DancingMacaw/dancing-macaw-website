@@ -14,16 +14,16 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, image } = post.data;
+const { title, description } = post.data;
 ---
 
-<Base title={title} meta_title={title} description={description} image={image}>
+<Base title={title} meta_title={title} description={description}>
   <section class="section pt-7">
     <div class="container">
       <div class="row justify-center">
         <article class="lg:col-10">
           {
-            image && (
+            /*
               <div class="mb-10 text-center">
                 <ImageMod
                   src={image}
@@ -34,7 +34,7 @@ const { title, description, image } = post.data;
                   format="webp"
                 />
               </div>
-            )
+              */
           }
           <h1 class="h2 mb-4 text-center">{title}</h1>
           <div class="content mb-10">

@@ -1,19 +1,14 @@
 {
   "main": [
     {
-      "name": "github",
-      "icon": "FaGithub",
+      "name": "appstore",
+      "icon": "FaAppStoreIos",
       "link": "https://www.github.com/"
     },
     {
-      "name": "x",
-      "icon": "FaXTwitter",
+      "name": "googleplay",
+      "icon": "FaGooglePlay",
       "link": "https://x.com/"
-    },
-    {
-      "name": "linkedin",
-      "icon": "FaLinkedin",
-      "link": "https://www.linkedin.com/"
     }
   ]
 }

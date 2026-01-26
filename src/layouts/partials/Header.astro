@@ -23,32 +23,19 @@ const { pathname } = Astro.url;
 ---
 
 <header class={`header z-30 ${settings.sticky_header && "sticky top-0"}`}>
-  <nav class="navbar container">
+  <nav class="navbar container gap-2">
+    <!-- navbar toggler input -->
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+
     <!-- logo -->
-    <div class="order-0">
+    <div>
       <Logo />
     </div>
-    <!-- navbar toggler -->
-    <input id="nav-toggle" type="checkbox" class="hidden" />
-    <label
-      for="nav-toggle"
-      class="order-3 cursor-pointer flex items-center lg:hidden text-text-dark dark:text-white lg:order-1"
-    >
-      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
-        <title>Menu Open</title>
-        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
-      </svg>
-      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
-        <title>Menu Close</title>
-        <polygon
-          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-          transform="rotate(45 10 10)"></polygon>
-      </svg>
-    </label>
-    <!-- /navbar toggler -->
+
+    <!-- navbar menu -->
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
+      class="navbar-nav hidden w-full pb-6 lg:flex lg:w-auto lg:items-center lg:space-x-2 lg:pb-0 lg:ml-8 xl:space-x-8 lg:order-0 order-last"
     >
       {
         main.map((menu) => (
@@ -123,11 +110,13 @@ const { pathname } = Astro.url;
         )
       }
     </ul>
-    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+
+    <!-- actions -->
+    <div class="ml-auto flex items-center gap-5">
       {
         settings.search && (
           <button
-            class="border-border text-text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            class="border-border text-text-dark hover:text-primary dark:border-darkmode-border inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
             aria-label="search"
             data-search-trigger
           >
@@ -135,7 +124,7 @@ const { pathname } = Astro.url;
           </button>
         )
       }
-      <ThemeSwitcher className="mr-5" />
+      <ThemeSwitcher />
       {
         navigation_button.enable && (
           <a
@@ -147,5 +136,22 @@ const { pathname } = Astro.url;
         )
       }
     </div>
+
+    <!-- navbar toggler label -->
+    <label
+      for="nav-toggle"
+      class="cursor-pointer flex items-center lg:hidden text-text-dark dark:text-white ml-2"
+    >
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
   </nav>
 </header>
