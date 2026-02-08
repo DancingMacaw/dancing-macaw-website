@@ -11,8 +11,12 @@
       "url": "/impressum"
     },
     {
+      "name": "Datenschutzerklärung",
+      "url": "/datenschutz"
+    },
+    {
       "name": "Privacy Policy",
-      "url": "/dataprivacy"
+      "url": "/privacy"
     }
   ]
 }

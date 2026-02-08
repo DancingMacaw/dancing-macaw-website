@@ -1,0 +1,63 @@
+---
+import Base from "@/layouts/Base.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+
+const title = "Datenschutzerklärung";
+const meta_title = "Datenschutzerklärung - Dancing Macaw";
+const description = "Übersicht Datenschutz";
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <PageHeader title={title} />
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <h2>1. Datenschutz für diese Webseite</h2>
+        <p>
+          Hier bitte den Text vom Datenschutz-Generator einfügen (Allgemeine
+          Hinweise, Hosting, Server-Logs, Cookies, etc.).
+        </p>
+
+        <hr class="my-8" />
+
+        <h2>2. Datenschutzerklärungen für unsere Produkte</h2>
+        <p>
+          Hier finden Sie spezifische Bestimmungen für die Nutzung unserer Apps:
+        </p>
+
+        <div class="row">
+          <!-- <div class="col-12 md:col-6 mb-4">
+            <div
+              class="bg-theme-light dark:bg-darkmode-theme-light p-6 rounded"
+            >
+              <h3>LinkNest App</h3>
+              <p>Speichert Daten nur lokal / nutzt Firebase / etc.</p>
+              <a href="/datenschutz/linknest" class="btn btn-primary mt-4"
+                >Zur Datenschutzerklärung</a
+              >
+            </div>
+          </div> -->
+          <div class="col-12 md:col-6 mb-4">
+            <div
+              class="bg-theme-light dark:bg-darkmode-theme-light p-6 rounded"
+            >
+              <h3>Rule of Three Game</h3>
+              <p>Nutzt Unity Analytics / AdMob / etc.</p>
+              <a href="/datenschutz/rule-of-three" class="btn btn-primary mt-4"
+                >Zur Datenschutzerklärung</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-8" />
+
+        <h2>3. Rechte der betroffenen Person</h2>
+        <p>
+          Recht auf Auskunft, Berichtigung, Löschung, etc. (Gilt für alle
+          Produkte).
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
