@@ -4,7 +4,7 @@ import PageHeader from "@/partials/PageHeader.astro";
 
 const title = "Privacy Policy";
 const meta_title = "Privacy Policy - Dancing Macaw";
-const description = "Privacy Policy Overview";
+const description = "Privacy Policy for Website and Apps";
 ---
 
 <Base title={title} meta_title={meta_title} description={description}>
@@ -23,48 +23,101 @@ const description = "Privacy Policy Overview";
           </p>
         </div>
 
-        <h2>1. Privacy Policy for this Website</h2>
+        <h2>1. Controller and Scope</h2>
         <p>
-          General information about hosting, server logs, cookies, and contact
-          forms.
+          This privacy policy applies to the website <strong
+            >[Your Domain]</strong
+          > and the following mobile applications (hereinafter referred to as "Apps"):
+        </p>
+        <ul>
+          <li>Rule of Three</li>
+        </ul>
+        <p>
+          The controller responsible for data processing is:<br />
+          Daniel Möck<br />
+          c/o IP-Management #2816<br />
+          Ludwig-Erhard-Straße 18<br />
+          20459 Hamburg<br />
+          Germany<br />
+          Email: info@dancingmacaw.com
         </p>
 
-        <hr class="my-8" />
-
-        <h2>2. Privacy Policies for our Products</h2>
-        <p>Here you can find specific provisions for the use of our apps:</p>
-
-        <div class="row">
-          <!-- <div class="col-12 md:col-6 mb-4">
-            <div
-              class="bg-theme-light dark:bg-darkmode-theme-light p-6 rounded"
-            >
-              <h3>LinkNest App</h3>
-              <p>Stores data only locally / uses Firebase / etc.</p>
-              <a href="/privacy/linknest" class="btn btn-primary mt-4"
-                >Read Policy</a
-              >
-            </div>
-          </div> -->
-          <div class="col-12 md:col-6 mb-4">
-            <div
-              class="bg-theme-light dark:bg-darkmode-theme-light p-6 rounded"
-            >
-              <h3>Rule of Three Game</h3>
-              <p>Uses Unity Analytics / AdMob / etc.</p>
-              <a href="/privacy/rule-of-three" class="btn btn-primary mt-4"
-                >Read Policy</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <hr class="my-8" />
-
-        <h2>3. Rights of the Data Subject</h2>
+        <h2>2. Data Collection on our Website (Hosting)</h2>
         <p>
-          Right to access, rectification, erasure, etc. (Applies to all
-          products).
+          Our website is hosted by <strong
+            >[Name of Host, e.g., Vercel/Netlify]</strong
+          >. The provider automatically collects and stores information in
+          so-called server log files, which your browser automatically transmits
+          to us (browser type, OS, referrer URL, IP address, time of request).
+          This data is not combined with other data sources. The basis for data
+          processing is Art. 6 (1) (f) GDPR (legitimate interest in technical
+          stability).
+        </p>
+
+        <h2>3. Data Collection and Services in the Apps</h2>
+
+        <h3>3.1 Infrastructure & Development (Expo)</h3>
+        <p>
+          We develop and operate our apps using the <strong>Expo</strong> framework
+          (650 Industries, Inc., USA). Expo allows us to deliver updates ("Over-the-Air
+          Updates") and ensure technical functionality. Technical connection data
+          may be processed in this context.
+        </p>
+
+        <h3>3.2 Analytics & Improvement (PostHog)</h3>
+        <p>
+          To identify errors and improve the app, we use <strong>PostHog</strong
+          > (PostHog Inc., USA/UK).
+        </p>
+        <ul>
+          <li>
+            <strong>Data processed:</strong> IP address (stored in anonymized form),
+            device information, usage data.
+          </li>
+          <li>
+            <strong>Location & Security:</strong> We use the PostHog EU Cloud (Server
+            location: Frankfurt, Germany). To the extent data is transferred to the
+            USA, this is based on the EU Commission's Standard Contractual Clauses
+            (SCC).
+          </li>
+          <li>
+            <strong>Legal Basis:</strong> Legitimate interest (Art. 6 (1) (f) GDPR).
+          </li>
+        </ul>
+
+        <h3>3.3 Purchases & Subscriptions (RevenueCat)</h3>
+        <p>
+          We use <strong>RevenueCat</strong> (RevenueCat, Inc., USA) to manage in-app
+          purchases and subscriptions.
+        </p>
+        <ul>
+          <li>
+            <strong>Function:</strong> RevenueCat validates purchase receipts from
+            the App Stores (Apple/Google) to determine your subscription status.
+          </li>
+          <li>
+            <strong>Data processed:</strong> App User ID (pseudonymized), purchase
+            history, subscription expiration dates. We do not have access to your
+            credit card details or your real name; these are stored securely by Apple
+            or Google.
+          </li>
+        </ul>
+
+        <h2>4. Device Permissions</h2>
+        <p>
+          The app may request certain permissions (e.g., camera, notifications).
+          You can revoke these permissions at any time in your operating system
+          settings. Access is only used for the specific functionality within
+          the app.
+        </p>
+
+        <h2>5. Your Rights</h2>
+        <p>
+          You have the right to request information about your stored personal
+          data, its origin, recipients, and the purpose of data processing at
+          any time without charge. You also have the right to request the
+          correction, blocking, or deletion of this data. Please contact us at
+          the email address provided above.
         </p>
       </div>
     </div>

@@ -4,7 +4,7 @@ import PageHeader from "@/partials/PageHeader.astro";
 
 const title = "Datenschutzerklärung";
 const meta_title = "Datenschutzerklärung - Dancing Macaw";
-const description = "Übersicht Datenschutz";
+const description = "Datenschutzerklärung für Website und Apps";
 ---
 
 <Base title={title} meta_title={meta_title} description={description}>
@@ -12,50 +12,103 @@ const description = "Übersicht Datenschutz";
   <section class="section">
     <div class="container">
       <div class="content">
-        <h2>1. Datenschutz für diese Webseite</h2>
+        <h2>1. Verantwortlicher und Geltungsbereich</h2>
         <p>
-          Hier bitte den Text vom Datenschutz-Generator einfügen (Allgemeine
-          Hinweise, Hosting, Server-Logs, Cookies, etc.).
+          Diese Datenschutzerklärung gilt für die Website <strong
+            >[Deine Domain]</strong
+          > sowie für die folgenden mobilen Applikationen (nachfolgend "Apps" genannt):
+        </p>
+        <ul>
+          <li>Rule of Three</li>
+        </ul>
+        <p>
+          Verantwortlicher im Sinne der Datenschutzgesetze ist:<br />
+          Daniel Möck<br />
+          c/o IP-Management #2816<br />
+          Ludwig-Erhard-Straße 18<br />
+          20459 Hamburg<br />
+          Germany<br />
+          Email: info@dancingmacaw.com
         </p>
 
-        <hr class="my-8" />
-
-        <h2>2. Datenschutzerklärungen für unsere Produkte</h2>
+        <h2>2. Datenerfassung auf unserer Website (Hosting)</h2>
         <p>
-          Hier finden Sie spezifische Bestimmungen für die Nutzung unserer Apps:
+          Unsere Website dient primär der Information. Sie wird bei <strong
+            >[Name Hoster, z.B. Vercel/Netlify]</strong
+          > gehostet. Der Provider erhebt und speichert automatisch Informationen
+          in sogenannten Server-Log-Dateien, die dein Browser automatisch übermittelt
+          (Browsertyp, Betriebssystem, Referrer URL, IP-Adresse, Uhrzeit). Diese Daten
+          werden nicht mit anderen Datenquellen zusammengeführt. Grundlage ist Art.
+          6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an technischer Stabilität).
         </p>
 
-        <div class="row">
-          <!-- <div class="col-12 md:col-6 mb-4">
-            <div
-              class="bg-theme-light dark:bg-darkmode-theme-light p-6 rounded"
-            >
-              <h3>LinkNest App</h3>
-              <p>Speichert Daten nur lokal / nutzt Firebase / etc.</p>
-              <a href="/datenschutz/linknest" class="btn btn-primary mt-4"
-                >Zur Datenschutzerklärung</a
-              >
-            </div>
-          </div> -->
-          <div class="col-12 md:col-6 mb-4">
-            <div
-              class="bg-theme-light dark:bg-darkmode-theme-light p-6 rounded"
-            >
-              <h3>Rule of Three Game</h3>
-              <p>Nutzt Unity Analytics / AdMob / etc.</p>
-              <a href="/datenschutz/rule-of-three" class="btn btn-primary mt-4"
-                >Zur Datenschutzerklärung</a
-              >
-            </div>
-          </div>
-        </div>
+        <h2>3. Datenerfassung und Dienste in den Apps</h2>
 
-        <hr class="my-8" />
-
-        <h2>3. Rechte der betroffenen Person</h2>
+        <h3>3.1 Infrastruktur & Entwicklung (Expo)</h3>
         <p>
-          Recht auf Auskunft, Berichtigung, Löschung, etc. (Gilt für alle
-          Produkte).
+          Wir nutzen für die Entwicklung und Bereitstellung unserer Apps das
+          Framework <strong>Expo</strong> (650 Industries, Inc., USA). Expo ermöglicht
+          es uns, Updates bereitzustellen ("Over-the-Air Updates") und die technische
+          Funktionsfähigkeit sicherzustellen. Hierbei können technische Verbindungsdaten
+          verarbeitet werden.
+        </p>
+
+        <h3>3.2 Analyse & Verbesserung (PostHog)</h3>
+        <p>
+          Um Fehler zu finden und die App zu verbessern, nutzen wir <strong
+            >PostHog</strong
+          > (PostHog Inc., USA/UK). PostHog hilft uns zu verstehen, wie die App genutzt
+          wird.
+        </p>
+        <ul>
+          <li>
+            <strong>Verarbeitete Daten:</strong> IP-Adresse (wird anonymisiert gespeichert),
+            Geräteinformationen, Nutzungsdaten.
+          </li>
+          <li>
+            <strong>Standort & Sicherheit:</strong> Wir nutzen die PostHog EU-Cloud
+            (Serverstandort Frankfurt). Soweit Daten in die USA übertragen werden,
+            erfolgt dies auf Grundlage der Standardvertragsklauseln (SCC) der EU-Kommission.
+          </li>
+          <li>
+            <strong>Rechtsgrundlage:</strong> Berechtigtes Interesse (Art. 6 Abs.
+            1 lit. f DSGVO).
+          </li>
+        </ul>
+
+        <h3>3.3 Käufe & Abonnements (RevenueCat)</h3>
+        <p>
+          Für die Abwicklung von In-App-Käufen und Abonnements nutzen wir <strong
+            >RevenueCat</strong
+          > (RevenueCat, Inc., USA).
+        </p>
+        <ul>
+          <li>
+            <strong>Funktion:</strong> RevenueCat validiert Kaufbelege der App Stores
+            (Apple/Google), um deinen Abo-Status zu prüfen.
+          </li>
+          <li>
+            <strong>Verarbeitete Daten:</strong> App-User-ID (pseudonymisiert), Kaufhistorie,
+            Ablaufdaten von Abos. Wir haben keinen Zugriff auf deine Kreditkartendaten
+            oder deinen Klarnamen; diese liegen sicher bei Apple bzw. Google.
+          </li>
+        </ul>
+
+        <h2>4. Berechtigungen auf dem Gerät</h2>
+        <p>
+          Die App fragt möglicherweise nach Berechtigungen (z. B. Kamera,
+          Mitteilungen). Du kannst diese Berechtigungen jederzeit in den
+          Einstellungen deines Betriebssystems widerrufen. Die Nutzung erfolgt
+          nur für den jeweils in der App ersichtlichen Zweck.
+        </p>
+
+        <h2>5. Deine Rechte</h2>
+        <p>
+          Du hast jederzeit das Recht auf unentgeltliche Auskunft über deine
+          gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger
+          und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung,
+          Sperrung oder Löschung dieser Daten. Wende dich hierzu bitte an die
+          oben genannte E-Mail-Adresse.
         </p>
       </div>
     </div>
