@@ -1,0 +1,35 @@
+name: Build dancing-macaw-website
+
+on:
+  workflow_call:
+    outputs:
+      deployment-folder:
+        value: ${{ jobs.build.outputs.deployment-folder }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      deployment-folder: ${{ env.DEPLOYMENT_FOLDER }}
+    env:
+      # WICHTIG: Astro baut standardmäßig in den 'dist' Ordner
+      DEPLOYMENT_FOLDER: ./dist
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          # Astro benötigt mindestens Node 18.x
+          node-version: v20.x
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro
+        env:
+          # Falls du Umgebungsvariablen brauchst, kommen sie hier hin
+          CI: true
+        run: npm run build

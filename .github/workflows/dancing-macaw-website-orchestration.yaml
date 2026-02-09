@@ -1,0 +1,35 @@
+name: Deploy Now Orchestration
+
+on:
+  push:
+    branches:
+      - main # Falls dein Hauptbranch anders heißt (z.B. master), hier anpassen
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  # 1. Schritt: Den Build-Workflow aufrufen, den wir gerade erstellt haben
+  build:
+    uses: ./.github/workflows/dancing-macaw-website-build.yaml
+
+  # 2. Schritt: Die gebauten Dateien an IONOS übertragen
+  deploy:
+    name: Deploy to IONOS
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to IONOS
+        uses: ionos-deploy-now/deploy-to-ionos-action@v2
+        with:
+          # Diese Secrets werden von IONOS automatisch im GitHub Repo hinterlegt
+          project: dancing-macaw-website
+          service-host: ${{ secrets.IONOS_SERVICE_HOST }}
+          project-id: ${{ secrets.IONOS_PROJECT_ID }}
+          deployment-key: ${{ secrets.IONOS_DEPLOYMENT_KEY }}
+          # Hier wird der Output aus dem Build-Job übernommen (unser ./dist Ordner)
+          dist-folder: ${{ needs.build.outputs.deployment-folder }}
