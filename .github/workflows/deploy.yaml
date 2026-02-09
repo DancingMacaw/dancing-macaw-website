@@ -4,31 +4,37 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node & Build
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
           cache: "npm"
 
       - name: Install & Build
         run: |
-          npm install
+          npm ci
           npm run build
 
       - name: Deploy to IONOS
-        uses: ionos-deploy-now/deploy-to-ionos-action@v2
+        uses: ionos-deploy-now/deploy-to-ionos-action@v2.1.0 # Fixierte Version für Stabilität
         with:
-          service-host: ${{ secrets.IONOS_SERVICE_HOST }}
+          # --- WICHTIGE ÄNDERUNGEN HIER ---
           project-id: ${{ secrets.IONOS_PROJECT_ID }}
-          # WICHTIG: Die Action v2 nutzt 'api-key' statt 'deployment-key'
+          service-host: ${{ secrets.IONOS_SERVICE_HOST }}
+
+          # In v2 heißt das 'api-key', aber dein Secret heißt wahrscheinlich noch DEPLOYMENT_KEY
           api-key: ${{ secrets.IONOS_DEPLOYMENT_KEY }}
+
+          # In v2 heißt das 'deployment-folder', nicht mehr 'dist-folder'
           deployment-folder: ./dist
+
+          # Optional: Hilft IONOS den Branch zuzuordnen
+          branch-id: main
