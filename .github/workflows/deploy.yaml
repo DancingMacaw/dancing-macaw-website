@@ -1,0 +1,34 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Install & Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy to IONOS
+        uses: ionos-deploy-now/deploy-to-ionos-action@v2
+        with:
+          service-host: ${{ secrets.IONOS_SERVICE_HOST }}
+          project-id: ${{ secrets.IONOS_PROJECT_ID }}
+          # WICHTIG: Die Action v2 nutzt 'api-key' statt 'deployment-key'
+          api-key: ${{ secrets.IONOS_DEPLOYMENT_KEY }}
+          deployment-folder: ./dist
