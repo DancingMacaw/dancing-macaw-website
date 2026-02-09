@@ -3,6 +3,10 @@
     {
       "name": "Apps & Tools",
       "url": "/apps"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
     }
   ],
   "footer": [
