@@ -1,8 +1,5 @@
-import config from "@/config/config.json";
-import { markdownify } from "@/lib/utils/textConverter";
+import announcementConfig from "./announcementConfig.json";
 import React, { useEffect, useState } from "react";
-
-const { enable, content, expire_days } = config.announcement;
 
 const Cookies = {
   set: (name: string, value: string, options: any = {}) => {
@@ -49,14 +46,15 @@ const Cookies = {
   },
 };
 
-const Announcement: React.FC = () => {
+const Announcement = () => {
+  const { enable, content, expire_days } = announcementConfig;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (enable && content && !Cookies.get("announcement-close")) {
       setIsVisible(true);
     }
-  }, []);
+  }, [enable, content]);
 
   const handleClose = () => {
     Cookies.set("announcement-close", "true", {
@@ -71,7 +69,7 @@ const Announcement: React.FC = () => {
 
   return (
     <div className="relative z-999 bg-body dark:bg-darkmode-body shadow-[1px_0_10px_7px_rgba(154,154,154,0.11)] px-4 py-4 pr-12 md:text-lg transition-all duration-300">
-      <p dangerouslySetInnerHTML={{ __html: markdownify(content) }} />
+      <p dangerouslySetInnerHTML={{ __html: content }} />
       <button
         onClick={handleClose}
         className="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer flex items-center justify-center w-7 h-7 border border-border dark:border-darkmode-border rounded-full text-xl transition-colors duration-200"
